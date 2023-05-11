@@ -28,50 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            dataGridView1 = new DataGridView();
-            dataGridView2 = new DataGridView();
-            textBox1 = new TextBox();
+            btnBuscar = new Button();
+            dgMaterias = new DataGridView();
+            dgAlumnos = new DataGridView();
+            txtBusquedaMateria = new TextBox();
             label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            lblMaterias = new Label();
+            lblAlumnos = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgMaterias).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgAlumnos).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // btnBuscar
             // 
-            button1.Location = new Point(378, 29);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "Buscar";
-            button1.UseVisualStyleBackColor = true;
+            btnBuscar.Location = new Point(378, 29);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(75, 23);
+            btnBuscar.TabIndex = 0;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
-            // dataGridView1
+            // dgMaterias
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 92);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(360, 346);
-            dataGridView1.TabIndex = 1;
+            dgMaterias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgMaterias.Location = new Point(12, 92);
+            dgMaterias.Name = "dgMaterias";
+            dgMaterias.RowTemplate.Height = 25;
+            dgMaterias.Size = new Size(360, 346);
+            dgMaterias.TabIndex = 1;
+            dgMaterias.CellClick += dgMaterias_CellClick;
             // 
-            // dataGridView2
+            // dgAlumnos
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(409, 92);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowTemplate.Height = 25;
-            dataGridView2.Size = new Size(360, 346);
-            dataGridView2.TabIndex = 2;
+            dgAlumnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgAlumnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgAlumnos.Location = new Point(409, 92);
+            dgAlumnos.Name = "dgAlumnos";
+            dgAlumnos.RowTemplate.Height = 25;
+            dgAlumnos.Size = new Size(360, 346);
+            dgAlumnos.TabIndex = 2;
+            dgAlumnos.CellFormatting += dgAlumnos_CellFormatting;
             // 
-            // textBox1
+            // txtBusquedaMateria
             // 
-            textBox1.Location = new Point(12, 30);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(360, 23);
-            textBox1.TabIndex = 3;
+            txtBusquedaMateria.Location = new Point(12, 30);
+            txtBusquedaMateria.Name = "txtBusquedaMateria";
+            txtBusquedaMateria.Size = new Size(360, 23);
+            txtBusquedaMateria.TabIndex = 3;
             // 
             // label1
             // 
@@ -82,52 +86,53 @@
             label1.TabIndex = 4;
             label1.Text = "Ingrese la materia a buscar";
             // 
-            // label2
+            // lblMaterias
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(12, 74);
-            label2.Name = "label2";
-            label2.Size = new Size(52, 15);
-            label2.TabIndex = 5;
-            label2.Text = "Materias";
+            lblMaterias.AutoSize = true;
+            lblMaterias.Location = new Point(12, 74);
+            lblMaterias.Name = "lblMaterias";
+            lblMaterias.Size = new Size(52, 15);
+            lblMaterias.TabIndex = 5;
+            lblMaterias.Text = "Materias";
             // 
-            // label3
+            // lblAlumnos
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(409, 74);
-            label3.Name = "label3";
-            label3.Size = new Size(171, 15);
-            label3.TabIndex = 6;
-            label3.Text = "Alumnos de la materia XXXXXX";
+            lblAlumnos.AutoSize = true;
+            lblAlumnos.Location = new Point(409, 74);
+            lblAlumnos.Name = "lblAlumnos";
+            lblAlumnos.Size = new Size(171, 15);
+            lblAlumnos.TabIndex = 6;
+            lblAlumnos.Text = "Alumnos de la materia XXXXXX";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(lblAlumnos);
+            Controls.Add(lblMaterias);
             Controls.Add(label1);
-            Controls.Add(textBox1);
-            Controls.Add(dataGridView2);
-            Controls.Add(dataGridView1);
-            Controls.Add(button1);
+            Controls.Add(txtBusquedaMateria);
+            Controls.Add(dgAlumnos);
+            Controls.Add(dgMaterias);
+            Controls.Add(btnBuscar);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)dgMaterias).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgAlumnos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
-        private DataGridView dataGridView1;
-        private DataGridView dataGridView2;
-        private TextBox textBox1;
+        private Button btnBuscar;
+        private DataGridView dgMaterias;
+        private DataGridView dgAlumnos;
+        private TextBox txtBusquedaMateria;
         private Label label1;
-        private Label label2;
-        private Label label3;
+        private Label lblMaterias;
+        private Label lblAlumnos;
     }
 }

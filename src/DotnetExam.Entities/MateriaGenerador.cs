@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DotnetExam.Entities
 {
-    public static class MateriaGenerador
+    public class MateriaGenerador
     {
-        public static List<Materia> Generar(int cantidad, int alumnosPorMateria) {
+        public List<Materia> Generar(int cantidad, int alumnosPorMateria) {
 
             var materias = new List<Materia>();
 
@@ -24,9 +24,12 @@ namespace DotnetExam.Entities
                 for (int a = 1; a <= alumnosPorMateria; a++)
                 {
                     materia.Alumnos.Add(new Alumno() { 
+                        _Id = a,
                         AlumnoId = a,
                         Legajo = $"M{i}-{a.ToString().PadLeft(6, '0')}/23",
-                        Nota = rnd.Next(1, 10)
+                        Nota = rnd.Next(1, 10),
+                        _nombre = $"Alexis {a}",
+                        _apellido = $"Mc Allister {a}"
                     });
                 }
                

@@ -8,4 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DotnetExam.Entities\DotnetExam.Entities.csproj" />
+  </ItemGroup>
+
 </Project>
